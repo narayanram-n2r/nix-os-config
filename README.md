@@ -23,7 +23,7 @@ The repository is structured as follows:
 
 To use this configuration repository, follow these steps:
 
-1.  Clone the repository to your local machine: `git clone <repository-url>`
+1.  Clone the repository to your local machine: `git clone https://github.com/narayanram-n2r/nix-os-config.git`
     
 2.  Open the `configuration.nix` file in a text editor. Customize the system parameters, package installations, services, networking, and other sections based on your requirements. Feel free to refer to the existing configuration and documentation for guidance.
     
