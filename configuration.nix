@@ -20,6 +20,7 @@
   boot.loader.grub.efiInstallAsRemovable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
+  
   boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.requestEncryptionCredentials = true;
 
@@ -65,8 +66,8 @@
       prime = {
         offload.enable = true; # enable to use intel gpu (hybrid mode)
         # sync.enable = true; # enable to use nvidia gpu (discrete mode)
-        intelBusId = "PCI:0:2:0";
-        nvidiaBusId = "PCI:1:0:0";
+        intelBusId = "PCI:00:02.0";
+        nvidiaBusId = "PCI:01:00.1";
       };
       modesetting.enable = false;
     };
@@ -93,14 +94,14 @@
   # };
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  services.printing.enable = true;
 
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.n2r = {
@@ -108,8 +109,8 @@
     initialPassword = "password";
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
-      #firefox
-      #thunderbird 
+      firefox
+      # thunderbird 
     ];
   };
 
@@ -131,7 +132,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -150,6 +151,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "23.05"; # Did you read the comment?
 
 }
